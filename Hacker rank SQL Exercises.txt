@@ -1,0 +1,124 @@
+These queries are resolved exercises extracted from Hacker Rank (https://www.hackerrank.com/). First you see next to "-" the name of the problem, then 
+
+
+- Revising the Select Query I
+ 
+SELECT * FROM CITY WHERE CITY.POPULATION > 100000 and CountryCode LIKE'USA'
+
+- Revising the Select Query II
+
+SELECT CITY.NAME FROM CITY WHERE CITY.POPULATION >  120000 and CountryCode LIKE'USA'
+
+- Select All
+
+SELECT * FROM CITY
+
+- Select By ID
+
+SELECT * FROM CITY WHERE CITY.ID = 1661
+
+- Japanese Cities' Attributes
+
+SELECT * FROM CITY WHERE  CountryCode LIKE 'JPN'
+
+- Japanese Cities' Names
+
+SELECT CITY.NAME FROM CITY WHERE  CountryCode LIKE 'JPN'
+
+- Weather Observation Station 1
+
+SELECT STATION.CITY,STATION.STATE FROM STATION 
+
+- Weather Observation Station 3
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE STATION.ID % 2 = 0
+
+- Weather Observation Station 5
+
+SELECT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY LIMIT 1;
+
+SELECT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1;
+
+- Weather Observation Station 6
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE SUBSTRING(STATION.CITY,1,1) IN ('a', 'e', 'i', 'o', 'u')
+
+- Weather Observation Station 7
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE SUBSTRING(STATION.CITY,-1,1) IN ('a','e','i','o','u')
+
+- Weather Observation Station 8
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE(SUBSTRING(STATION.CITY,1,1) IN ('a','e','i','o','u') AND SUBSTRING(STATION.CITY,-1,1) IN ('a','e','i','o','u'))
+
+- Weather Observation Station 9
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE SUBSTRING(STATION.CITY,1,1) NOT IN ('a', 'e', 'i', 'o', 'u')
+
+- Weather Observation Station 10
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE SUBSTRING(STATION.CITY,-1,1) NOT IN ('a', 'e', 'i', 'o', 'u')
+
+- Weather Observation Station 11
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE(SUBSTRING(STATION.CITY,1,1) NOT IN ('a','e','i','o','u') OR SUBSTRING(STATION.CITY,-1,1) NOT IN ('a','e','i','o','u'))
+
+- Weather Observation Station 12
+
+SELECT DISTINCT STATION.CITY FROM STATION WHERE(SUBSTRING(STATION.CITY,1,1) NOT IN ('a','e','i','o','u') AND SUBSTRING(STATION.CITY,-1,1) NOT IN ('a','e','i','o','u'))
+
+- Higher Than 75 Marks
+
+SELECT Name
+FROM STUDENTS
+WHERE (MARKS > 75)
+ORDER BY SUBSTR(NAME,-3),ID ASC;
+
+-Employee Names
+
+SELECT name FROM Employee ORDER BY Name ASC
+
+- Employee Names
+
+SELECT COUNT(ID) FROM CITY WHERE POPULATION > 100000
+
+- Employee Salaries
+
+SELECT NAME FROM Employee
+WHERE
+salary > 2000 AND
+months < 10
+ORDER BY employee_id ASC;
+
+- Average Population
+
+SELECT FLOOR(AVG(POPULATION)) FROM CITY 
+
+- Top Earners
+SELECT MAX(SALARY * MONTHS),COUNT(EMPLOYEE_ID) FROM EMPLOYEE
+
+- Weather Observation Station 2
+
+SELECT ROUND(SUM(LAT_N),2),ROUND(SUM(LONG_W),2) FROM STATION
+
+- Weather Observation Station 13
+
+SELECT TRUNCATE(SUM(LAT_N),4) FROM STATION WHERE 137.2345 > LAT_N AND LAT_N > 38.7880
+
+- Weather Observation Station 14
+
+SELECT TRUNCATE(MAX(LAT_N),4) FROM STATION WHERE 137.2345 > LAT_N 
+
+- Weather Observation Station 15
+
+SELECT ROUND(LONG_W,4) FROM STATION WHERE LAT_N = 
+(SELECT MAX(LAT_N) FROM STATION WHERE 137.2345>LAT_N)
+
+- Weather Observation Station 16
+
+SELECT ROUND(MIN(LAT_N),4) FROM STATION WHERE LAT_N > 38.7780
+
+- Weather Observation Station 17
+
+SELECT ROUND(LONG_W,4) FROM STATION WHERE LAT_N =
+(SELECT MIN(LAT_N) FROM STATION WHERE LAT_N >38.7780)
